@@ -31,8 +31,10 @@ after "deploy:create_symlink", "deploy:create_config_symlink"
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    sudo "service nginx reload"
+  task :restart do; end
+
+  task :nginx_reload, :roles => :app do
+  	sudo "service nginx reload"
   end
 
   task :setup_config, roles: :app do
