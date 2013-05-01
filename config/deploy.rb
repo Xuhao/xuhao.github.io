@@ -18,7 +18,7 @@ set :deploy_to, "#{user_dir}/apps/#{application}"
 # role :app, "your app-server here"                          # This may be the same as your `Web` server
 # role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
 # role :db,  "your slave db-server here"
-server "121.199.14.129", :app, :web, :db, :primary => true
+server "rubyfans.com", :app, :web, :db, :primary => true
 
 after "deploy:restart", "deploy:cleanup"
 after "deploy:setup", "deploy:setup_config"
@@ -34,7 +34,7 @@ namespace :deploy do
   task :restart do; end
 
   task :nginx_reload, :roles => :app do
-  	sudo "service nginx reload"
+    sudo "service nginx reload"
   end
 
   task :setup_config, roles: :app do
