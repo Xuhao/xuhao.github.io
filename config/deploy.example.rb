@@ -3,12 +3,12 @@ set :repository,  "git://github.com/Xuhao/xuhao.github.com.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 
-set :user, "xuhao"
+set :user, "{user_name}"
 set :use_sudo, false
 default_run_options[:pty] = true
 set :ssh_options, { :forward_agent => true }
 
-set :user_dir, "/home/xuhao"
+set :user_dir, "{user dir}"
 set :etc_dir, "#{user_dir}/etc"
 set :deploy_to, "#{user_dir}/apps/#{application}"
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
