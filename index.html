@@ -76,7 +76,7 @@
     #content h1 { font-size: 30px; margin-bottom: 30px; color: #5B6481 }
     #content p { text-indent: 2em; }
     #content h4 { margin: 20px 0 0 0;}
-    .my_photo { display: block; float: left; margin-right: 20px; }
+    .my_photo { display: block; float: left; margin-right: 20px; max-width: 250px; }
     .info { color: #626262}
     #github { margin: 0; }
     #github li.loader {
@@ -153,7 +153,7 @@
     </div>
     <div id="job" style="display: none;">
       <h1>我的工作</h1>
-      <img src="http://ekohe.com/system/images/W1siZiIsIjIwMTMvMDMvMDcvMTlfMzRfMzFfMTg1X3h1aGFvLnBuZyJdXQ/xuhao.png" class="my_photo" />
+      <img src="assets/images/xuhao.png" class="my_photo" />
       当前，我是易空海(Ekohe)的一名Web开发工程师。<br />
       <a href="http://ekohe.com/people/xu-hao" target="_blank">http://ekohe.com/people/xu-hao</a>
     </div>
@@ -200,13 +200,16 @@
   </div>
   <script type="text/javascript" charset="utf-8">
     $(function(){
-      var currentP = window.location.href.split('#')[1];
-      pSwitch(currentP);
+      pSwitch(window.location.hash);
       getRepos();
       
       $('#menu a').on('click', function(e){
         pSwitch($(e.currentTarget).data('target'));
         getRepos();
+      });
+
+      $(window).on('hashchange', function(e){
+        pSwitch(window.location.hash);
       });
       
       function getRepos() {
@@ -225,6 +228,7 @@
       }
       
       function pSwitch(id) {
+        id = id.replace('#','');
         if (id) {
           $('#content div').hide();
           $('#' + id).show();
