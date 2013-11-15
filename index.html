@@ -5,8 +5,6 @@
   <meta name="google-translate-customization" content="411b66257d2c1975-ebb55e9b8ac0e8f8-g0cdb9e6553279398-c"></meta>
   <title>Xuhao - Ruby on Rails Development</title>
   <script src="assets/javascripts/jquery.min.js" type="text/javascript"></script>
-  <script src="assets/javascripts/jquery.servicelocator.js" type="text/javascript"></script>
-  <script src="assets/javascripts/services.github.js" type="text/javascript"></script>
   <script src="assets/javascripts/github.js" type="text/javascript"></script>
   <style type="text/css" media="screen">
     body {
@@ -215,18 +213,8 @@
         function getRepos() {
             var gitInfo;
             if ($('#work:visible').size() > 0 && $('#github li:not(.loader)').size() == 0) {
-                gitInfo = new Github('xuhao');
-                gitInfo.getUserRepos('xuhao', $.proxy(_getUserRepos_successHandler, this));
+                $("#github").loadRepositories("xuhao");
             }
-        }
-
-        function _getUserRepos_successHandler(result) {
-            var repo = [];
-            $('#github').empty();
-            $.each(result, function(i,n){
-                repo.push("<li><a href='" + n.html_url + "' target='_blank'>" + n.name + "</a> (" + n.description + ", Base on " + n.language + ")</li>");
-            });
-            $('#github').append(repos.join(''));
         }
 
         function pSwitch(id) {
