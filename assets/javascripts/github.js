@@ -13,13 +13,13 @@ jQuery.fn.loadRepositories = function(username) {
     var repos_items = [];
     target.empty();
     $(repos).each(function() {
-      repos_items.push("<li><a href='" + this.url + "' target='_blank'>" + this.name + "</a> (" + this.description + ", Base on " + this.language + ")</li>");
+      repos_items.push("<li><a href='" + this.html_url + "' target='_blank'>" + this.name + "</a> (" + this.description + ", Base on " + this.language + ")</li>");
     });
     target.append(repos_items.join(''));
   });
 
   function sortByNumberOfWatchers(repos) {
-    repos.sort(function(a,b) {
+    repos.sort(function(a, b) {
       return b.watchers - a.watchers;
     });
   }
