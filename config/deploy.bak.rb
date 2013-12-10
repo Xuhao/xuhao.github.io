@@ -3,22 +3,16 @@ set :repository,  "git://github.com/Xuhao/xuhao.github.com.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
 
-set :user, "{user_name}"
+set :user, "xuhao"
 set :use_sudo, false
 default_run_options[:pty] = true
 set :ssh_options, { :forward_agent => true }
 
-set :user_dir, "{user dir}"
+set :user_dir, "/home/xuhao"
 set :etc_dir, "#{user_dir}/etc"
 set :deploy_to, "#{user_dir}/apps/#{application}"
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-# role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-# role :app, "your app-server here"                          # This may be the same as your `Web` server
-# role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-# role :db,  "your slave db-server here"
-server "rubyfans.com", :app, :web, :db, :primary => true
+server "115.29.162.29", :app, :web, :db, :primary => true
 
 after "deploy:restart", "deploy:cleanup"
 after "deploy:setup", "deploy:setup_config"
