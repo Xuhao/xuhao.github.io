@@ -2,7 +2,7 @@ set :application, 'homepage'
 set :repo_url, 'git://github.com/Xuhao/xuhao.github.com.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, '/home/xuhao/apps/homepage'
+set :deploy_to, "/home/xuhao/apps/#{fetch(:application)}"
 # set :scm, :git
 set :nginx_config_dir, '/home/xuhao/config/nginx'
 
@@ -38,20 +38,18 @@ namespace :deploy do
         execute :mkdir, '-pv', "#{fetch(:deploy_to)}/shared/log"
       end
     end
+  end
 
-    after :linked_dirs, :linked_nginx_config do
-      on roles :app do
-        execute :mkdir, '-pv', fetch(:nginx_config_dir)
+  after :finishing, :linked_nginx_config do
+    on roles :app do
+      execute :mkdir, '-pv', fetch(:nginx_config_dir)
 
-        target = "#{fetch(:nginx_config_dir)}/#{fetch(:application)}.conf"
-        source = "#{current_path}/config/nginx.conf"
-        unless test "[ -L #{target} ]"
-          if test "[ -f #{target} ]"
-            execute :rm, target
-          end
-          execute :ln, '-s', source, target
-        end
+      target = "#{fetch(:nginx_config_dir)}/#{fetch(:application)}.conf"
+      source = "#{current_path}/config/nginx.conf"
+      if test "[ -f #{target} ]"
+        execute :rm, target
       end
+      execute :ln, '-s', source, target
     end
   end
 
