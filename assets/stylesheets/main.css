@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-size: 12px;
+  background: url("./../images/whiteBg.png") repeat scroll 0 0 #F1F1F1;
+}
+#menu {
+  width: 15%;
+  left: 0;
+  background-color: #ECECEC;
+  border-right: 1px solid #BEBCBC;
+}
+#content {
+  width: 85%;
+  right: 0;
+  overflow-y: auto;
+}
+#menu, #content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+#menu ul {
+  padding: 0;
+  margin: 50px 0 0 0;
+}
+#menu ul li {
+  list-style: none;
+  margin: 0;
+  padding: 25px 0 20px;
+  text-align: center;
+  border-bottom: 1px solid #D4D4D4;
+  -webkit-box-shadow: inset 0px 0px 4px 2px #ECECEC;
+  -moz-box-shadow: inset 0px 0px 4px 2px #ECECEC;
+  box-shadow: inset 0px 0px 4px 2px #ECECEC;
+}
+#menu ul li:hover, #menu ul li.active {
+  background-color: #FFF;
+}
+#menu ul li a {
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  text-decoration: none;
+  color: #727272;
+  text-shadow: 1px 1px 2px #727272;
+  letter-spacing: 1px;
+}
+#menu .icp-link {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+}
+#menu .icp-link a, #menu .icp-link a:focus, #menu .icp-link a:visited, #menu .icp-link a:active {
+  font-size: 12px;
+  text-decoration: none;
+  color: #aaa;
+}
+.shadow {
+  -webkit-box-shadow: inset 0px 0px 3px 0px #ECECEC;
+  -moz-box-shadow: inset 0px 0px 3px 0px #ECECEC;
+  box-shadow: inset 0px 0px 3px 0px #ECECEC;
+}
+#content div {
+  margin: 50px 50px 0 50px;
+  font-size: 16px;
+  text-shadow: 0 2px 1px rgba(255, 255, 255, 0.3);
+  position: relative;
+  line-height: 28px;
+}
+#content h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #5B6481
+}
+#content p {
+  text-indent: 2em;
+}
+#content h4 {
+  margin: 20px 0 0 0;
+}
+.my-photo {
+  display: block;
+  float: left;
+  margin-right: 20px;
+  max-width: 250px;
+}
+.info {
+  color: #626262
+}
+#github {
+  margin: 0;
+}
+#github li.loader {
+  color: #8A0E12;
+  font-size: 14px;
+  list-style: none;
+  vertical-align: middle;
+}
+#github li.loader img {
+  width: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+#skills {
+  padding: 0;
+}
+#skills li {
+  list-style: none;
+  margin: 0;
+  vertical-align: middle;
+  padding: 5px 0;
+}
+#skills li span.name {
+  color: #5B6481;
+  line-height: 25px;
+  display: inline-block;
+  font-size: 18px;
+  width: 120px;
+}
+.skills-icon {
+  display: inline-block;
+  background-image: url('./../images/skills_level.png');
+  background-repeat: no-repeat;
+  width: 147px;
+  height: 26px;
+  line-height: 26px;
+  vertical-align: middle;
+}
+.level-1 {
+  background-position: 0px -25px;
+}
+.level-2 {
+  background-position: 0px -50px;
+}
+.level-3 {
+  background-position: 0px -76px;
+}
+.level-4 {
+  background-position: 0px -101px;
+}
+.level-5 {
+  background-position: 0px -126px;
+}
