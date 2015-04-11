@@ -1,1 +1,3 @@
 .versions.conf
+node_modules/
+bundle.js
