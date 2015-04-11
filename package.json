@@ -1,0 +1,44 @@
+{
+  "name": "homepage",
+  "version": "1.0.0",
+  "description": "Xuhao's homepage",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify main.js | uglifyjs > bundle.js",
+    "watch": "watchify main.js -o bundle.js --debug --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xuhao/xuhao.github.com.git"
+  },
+  "keywords": [
+    "xuhao",
+    "homepage"
+  ],
+  "author": "Xuhao <xuhao@rubyfans.com> (http://rubyfans.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xuhao/xuhao.github.com/issues"
+  },
+  "homepage": "http://rubyfans.com",
+  "dependencies": {
+    "browserify": "^9.0.8",
+    "fluxxor": "^1.5.3",
+    "react": "^0.13.1",
+    "react-router": "^0.13.2",
+    "reactify": "^1.1.0",
+    "superagent": "^1.1.0",
+    "uglify-js": "^2.4.19"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
+  }
+}
