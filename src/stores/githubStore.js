@@ -1,4 +1,5 @@
 var Fluxxor = require('fluxxor');
+var constants = require('./../constants/githubConstant');
 
 module.exports = Fluxxor.createStore({
   initialize: function() {
@@ -8,7 +9,8 @@ module.exports = Fluxxor.createStore({
 
     this.bindActions(
       constants.LOAD_REPO, this.onLoadRepo,
-      constants.LOAD_REPO_SUCCESS, this.onLoadRepoSuccess
+      constants.LOAD_REPO_SUCCESS, this.onLoadRepoSuccess,
+      constants.LOAD_REPO_FAIL, this.onLoadRepoFail
     );
   },
 
@@ -17,8 +19,14 @@ module.exports = Fluxxor.createStore({
     this.emit("change");
   },
 
-  onLoadRepoSuccess: function(){
+  onLoadRepoSuccess: function(payload) {
     this.loading = false;
+    this.repos = payload;
     this.emit("change");
+  },
+
+  onLoadRepoFail: function(payload) {
+    this.loading = false;
+    this.error = payload;
   }
 });
