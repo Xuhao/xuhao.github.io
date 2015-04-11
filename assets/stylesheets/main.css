@@ -26,7 +26,6 @@ body {
 #menu ul li {
   list-style: none;
   margin: 0;
-  padding: 25px 0 20px;
   text-align: center;
   border-bottom: 1px solid #D4D4D4;
   -webkit-box-shadow: inset 0px 0px 4px 2px #ECECEC;
@@ -38,6 +37,7 @@ body {
 }
 #menu ul li a {
   display: inline-block;
+  padding: 25px 0 20px;
   width: 100%;
   font-size: 20px;
   text-decoration: none;
@@ -60,7 +60,7 @@ body {
   -moz-box-shadow: inset 0px 0px 3px 0px #ECECEC;
   box-shadow: inset 0px 0px 3px 0px #ECECEC;
 }
-#content div {
+#content > div {
   margin: 50px 50px 0 50px;
   font-size: 16px;
   text-shadow: 0 2px 1px rgba(255, 255, 255, 0.3);
@@ -78,7 +78,7 @@ body {
 #content h4 {
   margin: 20px 0 0 0;
 }
-.my-photo {
+img.my-photo {
   display: block;
   float: left;
   margin-right: 20px;
@@ -115,7 +115,7 @@ body {
   line-height: 25px;
   display: inline-block;
   font-size: 18px;
-  width: 120px;
+  width: 130px;
 }
 .skills-icon {
   display: inline-block;

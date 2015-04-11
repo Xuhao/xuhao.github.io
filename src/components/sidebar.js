@@ -13,10 +13,10 @@ module.exports = React.createClass({
         ['about', '关于'],
         ['job', '工作'],
         ['skill', '技能'],
-        ['work', '作品'],
+        ['works', '作品'],
         ['contact', '联系']
       ]
-    }
+    };
   },
 
   render: function () {
@@ -25,7 +25,7 @@ module.exports = React.createClass({
       <div id="menu" className="shadow">
         <ul>
           {this.props.linksMap.map(function(linkInfo, i) {
-            return <li className={linkInfo[0] === currentPathname ? 'active' : ''}><Link to={linkInfo[0]}>{linkInfo[1]}</Link></li>
+            return <li className={linkInfo[0] === currentPathname ? 'active' : ''} key={i}><Link to={linkInfo[0]}>{linkInfo[1]}</Link></li>
           })}
         </ul>
         <div className="icp-link"><a href="http://www.miitbeian.gov.cn">豫ICP备11005941号-4</a></div>

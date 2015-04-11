@@ -9,7 +9,7 @@ var Sidebar = require('./src/components/sidebar');
 var About = require('./src/components/pages/about');
 var Job = require('./src/components/pages/job');
 var Skill = require('./src/components/pages/skill');
-var Work = require('./src/components/pages/work');
+var Works = require('./src/components/pages/works');
 var Contact = require('./src/components/pages/contact');
 
 var App = React.createClass({
@@ -18,8 +18,8 @@ var App = React.createClass({
       <div>
         <Sidebar />
         <div id="content">
-	        <RouteHandler/>
-	      </div>
+          <RouteHandler/>
+        </div>
       </div>
     );
   }
@@ -30,7 +30,7 @@ var routes = (
     <Route name="about" handler={About}/>
     <Route name="job" handler={Job}/>
     <Route name="skill" handler={Skill}/>
-    <Route name="work" handler={Work}/>
+    <Route name="works" handler={Works}/>
     <Route name="contact" handler={Contact}/>
     <DefaultRoute handler={About}/>
     <NotFoundRoute handler={About}/>
