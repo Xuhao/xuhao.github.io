@@ -28,5 +28,6 @@ module.exports = Fluxxor.createStore({
   onLoadRepoFail: function(payload) {
     this.loading = false;
     this.error = payload;
+    this.emit("change");
   }
 });
