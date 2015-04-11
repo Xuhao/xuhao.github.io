@@ -1,4 +1,17 @@
 var React = require('react');
+var Fluxxor = require('fluxxor');
+var GithubStore = require('../../stores/githubStore');
+var githubActions = require('../../actions/githubAction');
+
+var actions = {
+  github: githubActions
+}
+var stores = {
+  GithubStore: new GithubStore()
+};
+
+var flux = new Fluxxor.Flux(stores, actions);
+window.flux = flux;
 
 module.exports = React.createClass({
   render: function () {
