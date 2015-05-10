@@ -1,5 +1,6 @@
-var Fluxxor = require('fluxxor');
-var constants = require('./../constants/githubConstant');
+"use strict";
+var Fluxxor = require("fluxxor");
+var constants = require("./../constants/githubConstant");
 
 module.exports = Fluxxor.createStore({
   initialize: function() {

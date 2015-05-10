@@ -1,9 +1,10 @@
-var React = require('react');
-var RubyWorks = require('./works/ruby');
-var Github = require('./works/github');
-var BrowserExt = require('./works/browserExt');
-var PHP = require('./works/php');
-var VB = require('./works/vb');
+"use strict";
+var React = require("react");
+var RubyWorks = require("./works/ruby");
+var Github = require("./works/github");
+var BrowserExt = require("./works/browserExt");
+var PHP = require("./works/php");
+var VB = require("./works/vb");
 
 module.exports = React.createClass({
   render: function () {

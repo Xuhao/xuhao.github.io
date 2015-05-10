@@ -1,5 +1,6 @@
-var React = require('react');
-var Fluxxor = require('fluxxor');
+"use strict";
+var React = require("react");
+var Fluxxor = require("fluxxor");
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
@@ -29,7 +30,7 @@ module.exports = React.createClass({
       repoList = this.state.repos.map(function(repo, i){
         return (
           <li key={i}>
-            <a href={repo.html_url} target='_blank'>{repo.name}</a>
+            <a href={repo.html_url} target="_blank">{repo.name}</a>
             ({repo.description}, Base on {repo.language})
           </li>
         );
@@ -46,6 +47,6 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function() {
-    this.getFlux().actions.github.loadRepos('Xuhao');
-  },
+    this.getFlux().actions.github.loadRepos("Xuhao");
+  }
 });

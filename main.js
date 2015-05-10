@@ -1,10 +1,11 @@
-var React = require('react');
-var Router = require('react-router');
-var Fluxxor = require('fluxxor');
-var routes = require('./src/routes');
+"use strict";
+var React = require("react");
+var Router = require("react-router");
+var Fluxxor = require("fluxxor");
+var routes = require("./src/routes");
 
-var GithubStore = require('./src/stores/githubStore');
-var githubActions = require('./src/actions/githubAction');
+var GithubStore = require("./src/stores/githubStore");
+var githubActions = require("./src/actions/githubAction");
 
 var actions = {
   github: githubActions
