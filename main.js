@@ -22,6 +22,6 @@ flux.on("dispatch", function(type, payload) {
   }
 });
 
-Router.run(routes, function (Handler) {
+Router.run(routes, Router.HistoryLocation, function (Handler) {
   React.render(<Handler flux={flux} />, document.body);
 });
