@@ -40,8 +40,11 @@ namespace :deploy do
   %w(start stop restart reload).each do |action|
     desc "#{action} Nginx server"
     task action.to_sym do
-      # TODO: pty looks not working, revert below line after pty works.
-      # invoke "nginx:#{action}"
+      on roles :app do
+        within release_path do
+          sudo "service nginx #{action}"
+        end
+      end
     end
   end
 
@@ -78,5 +81,6 @@ namespace :npm do
     end
   end
 
+  before 'npm:install', 'npm:prune'
   before 'deploy:updated', 'npm:build'
 end
