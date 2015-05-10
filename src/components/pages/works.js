@@ -2,6 +2,7 @@
 var React = require("react");
 var RubyWorks = require("./works/ruby");
 var Github = require("./works/github");
+var ReactWorks = require("./works/react");
 var BrowserExt = require("./works/browserExt");
 var PHP = require("./works/php");
 var VB = require("./works/vb");
@@ -15,6 +16,8 @@ module.exports = React.createClass({
         <RubyWorks />
         <hr />
         <Github />
+        <hr />
+        <ReactWorks />
         <hr />
         <BrowserExt />
         <hr />
