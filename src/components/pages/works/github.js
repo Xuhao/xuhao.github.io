@@ -47,6 +47,8 @@ module.exports = React.createClass({
   },
 
   componentDidMount: function() {
-    this.getFlux().actions.github.loadRepos("Xuhao");
+    if (this.state.repos.length === 0) {
+      this.getFlux().actions.github.loadRepos("Xuhao");
+    }
   }
 });
