@@ -1,8 +1,8 @@
 "use strict";
-var React = require("react");
+import React from "react";
 
-module.exports = React.createClass({
-  render: function () {
+const PHP = React.createClass({
+  render() {
     return (
       <div id="php_works">
         <h2>PHP</h2>
@@ -13,3 +13,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+export default PHP;

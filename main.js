@@ -1,20 +1,19 @@
 "use strict";
-var React = require("react");
-var Router = require("react-router");
-var Fluxxor = require("fluxxor");
-var routes = require("./src/routes");
+import React from "react";
+import Router from "react-router";
+import Fluxxor from "fluxxor";
+import routes from "./src/routes";
+import GithubStore from "./src/stores/githubStore";
+import githubAction from "./src/actions/githubAction";
 
-var GithubStore = require("./src/stores/githubStore");
-var githubActions = require("./src/actions/githubAction");
-
-var actions = {
-  github: githubActions
+const actions = {
+  github: githubAction
 };
-var stores = {
+const stores = {
   GithubStore: new GithubStore()
 };
 
-var flux = new Fluxxor.Flux(stores, actions);
+const flux = new Fluxxor.Flux(stores, actions);
 
 flux.on("dispatch", function(type, payload) {
   if (console && console.log) {

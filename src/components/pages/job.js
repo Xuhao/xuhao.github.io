@@ -1,8 +1,8 @@
 "use strict";
-var React = require("react");
+import React from "react";
 
-module.exports = React.createClass({
-  render: function () {
+const Job = React.createClass({
+  render() {
     return (
       <div id="job">
         <h1>我的工作</h1>
@@ -13,3 +13,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+export default Job;

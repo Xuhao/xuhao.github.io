@@ -1,14 +1,14 @@
 "use strict";
-var React = require("react");
-var RubyWorks = require("./works/ruby");
-var Github = require("./works/github");
-var ReactWorks = require("./works/react");
-var BrowserExt = require("./works/browserExt");
-var PHP = require("./works/php");
-var VB = require("./works/vb");
+import React from "react";
+import RubyWorks from "./works/ruby";
+import Github from "./works/github";
+import ReactWorks from "./works/react";
+import BrowserExt from "./works/browserExt";
+import PHP from "./works/php";
+import VB from "./works/vb";
 
-module.exports = React.createClass({
-  render: function () {
+const Works = React.createClass({
+  render() {
     return (
       <div id="works">
         <h1>我的作品</h1>
@@ -28,3 +28,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+export default Works;

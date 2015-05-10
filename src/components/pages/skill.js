@@ -1,8 +1,8 @@
 "use strict";
-var React = require("react");
+import React from "react";
 
-module.exports = React.createClass({
-  getDefaultProps: function() {
+const Skill = React.createClass({
+  getDefaultProps() {
     return {
       skills: [
         {name: "Ruby", level: 5},
@@ -18,12 +18,12 @@ module.exports = React.createClass({
     };
   },
 
-  render: function () {
+  render() {
     return (
       <div id="skill">
         <h1>我的技能</h1>
         <ul id="skills">
-          {this.props.skills.map(function(skill, i){
+          {this.props.skills.map((skill, i) => {
             return (
               <li key={i}>
                 <span className="name">{skill.name}</span>
@@ -36,3 +36,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+export default Skill;

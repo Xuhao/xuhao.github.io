@@ -1,8 +1,8 @@
 "use strict";
-var React = require("react");
+import React from "react";
 
-module.exports = React.createClass({
-  render: function () {
+const BrowserExt = React.createClass({
+  render() {
     return (
       <div id="browser_ext_works">
         <h2>浏览器插件</h2>
@@ -17,3 +17,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+export default BrowserExt;

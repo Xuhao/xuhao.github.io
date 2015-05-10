@@ -1,8 +1,8 @@
 "use strict";
-var React = require("react");
+import React from "react";
 
-module.exports = React.createClass({
-  render: function () {
+const VB = React.createClass({
+  render() {
     return (
       <div id="vb_works">
         <h2>Visual Basic 6.0</h2>
@@ -13,3 +13,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+export default VB;

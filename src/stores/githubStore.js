@@ -1,9 +1,9 @@
 "use strict";
-var Fluxxor = require("fluxxor");
-var constants = require("./../constants/githubConstant");
+import Fluxxor from "fluxxor";
+import constants from "./../constants/githubConstant";
 
-module.exports = Fluxxor.createStore({
-  initialize: function() {
+const GithubStore = Fluxxor.createStore({
+  initialize() {
     this.loading = false;
     this.error = null;
     this.repos = [];
@@ -15,20 +15,22 @@ module.exports = Fluxxor.createStore({
     );
   },
 
-  onLoadRepo: function() {
+  onLoadRepo() {
     this.loading = true;
     this.emit("change");
   },
 
-  onLoadRepoSuccess: function(payload) {
+  onLoadRepoSuccess(payload) {
     this.loading = false;
     this.repos = payload;
     this.emit("change");
   },
 
-  onLoadRepoFail: function(payload) {
+  onLoadRepoFail(payload) {
     this.loading = false;
     this.error = payload;
     this.emit("change");
   }
 });
+
+export default GithubStore;

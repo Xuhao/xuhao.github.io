@@ -1,14 +1,14 @@
 "use strict";
-var React = require("react");
-var Fluxxor = require("fluxxor");
-var FluxMixin = Fluxxor.FluxMixin(React);
-var StoreWatchMixin = Fluxxor.StoreWatchMixin;
+import React from "react";
+import Fluxxor from "fluxxor";
+const FluxMixin = Fluxxor.FluxMixin(React);
+const StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
-module.exports = React.createClass({
+const Github = React.createClass({
   mixins: [FluxMixin, StoreWatchMixin("GithubStore")],
 
-  getStateFromFlux: function() {
-    var store = this.getFlux().store("GithubStore");
+  getStateFromFlux() {
+    let store = this.getFlux().store("GithubStore");
     return {
       loading: store.loading,
       error: store.error,
@@ -16,8 +16,8 @@ module.exports = React.createClass({
     };
   },
 
-  render: function () {
-    var repoList;
+  render () {
+    let repoList;
     if (this.state.loading) {
       repoList = (
         <li className="loader">
@@ -27,7 +27,7 @@ module.exports = React.createClass({
     } else if (this.state.error) {
       repoList = (<li className="loader">{this.state.error}</li>);
     } else {
-      repoList = this.state.repos.map(function(repo, i){
+      repoList = this.state.repos.map((repo, i) => {
         return (
           <li key={i}>
             <a href={repo.html_url} target="_blank">{repo.name}</a>
@@ -46,9 +46,11 @@ module.exports = React.createClass({
     );
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
     if (this.state.repos.length === 0) {
       this.getFlux().actions.github.loadRepos("Xuhao");
     }
   }
 });
+
+export default Github;

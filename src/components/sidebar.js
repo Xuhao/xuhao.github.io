@@ -1,14 +1,9 @@
 "use strict";
-var React = require("react");
-var Router = require("react-router");
-var Link = Router.Link;
+import React from "react";
+import { Link } from "react-router";
 
-module.exports = React.createClass({
-  contextTypes: {
-    router: React.PropTypes.func
-  },
-
-  getDefaultProps: function() {
+const Sidebar = React.createClass({
+  getDefaultProps() {
     return {
       linksMap: [
         ["about", "关于"],
@@ -20,11 +15,11 @@ module.exports = React.createClass({
     };
   },
 
-  render: function () {
+  render() {
     return (
       <div id="menu" className="shadow">
         <ul>
-          {this.props.linksMap.map(function(linkInfo, i) {
+          {this.props.linksMap.map((linkInfo, i) => {
             return (
               <li key={i}>
                 <Link to={linkInfo[0]}>{linkInfo[1]}</Link>
@@ -37,3 +32,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+export default Sidebar;

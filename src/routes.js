@@ -1,20 +1,20 @@
 "use strict";
-var React = require("react");
-var Fluxxor = require("fluxxor");
-var FluxMixin = Fluxxor.FluxMixin(React);
-var Router = require("react-router");
-var {Route, DefaultRoute, NotFoundRoute, RouteHandler} = Router;
+import React from "react";
+import Fluxxor from "fluxxor";
+import {Route, DefaultRoute, NotFoundRoute, RouteHandler} from "react-router";
 
-var Sidebar = require("./components/sidebar");
-var About = require("./components/pages/about");
-var Job = require("./components/pages/job");
-var Skill = require("./components/pages/skill");
-var Works = require("./components/pages/works");
-var Contact = require("./components/pages/contact");
-var App = React.createClass({
+import Sidebar from "./components/sidebar";
+import About from "./components/pages/about";
+import Job from "./components/pages/job";
+import Skill from "./components/pages/skill";
+import Works from "./components/pages/works";
+import Contact from "./components/pages/contact";
+
+const FluxMixin = Fluxxor.FluxMixin(React);
+const App = React.createClass({
   mixins: [FluxMixin],
 
-  render: function () {
+  render() {
     return (
       <div>
         <Sidebar />
@@ -26,7 +26,7 @@ var App = React.createClass({
   }
 });
 
-module.exports = (
+const routes = (
   <Route name="app" path="/" handler={App}>
     <Route name="about" handler={About}/>
     <Route name="job" handler={Job}/>
@@ -37,3 +37,5 @@ module.exports = (
     <NotFoundRoute handler={About}/>
   </Route>
 );
+
+export default routes;

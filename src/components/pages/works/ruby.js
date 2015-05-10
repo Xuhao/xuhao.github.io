@@ -1,8 +1,8 @@
 "use strict";
-var React = require("react");
+import React from "react";
 
-module.exports = React.createClass({
-  render: function () {
+const Ruby = React.createClass({
+  render() {
     return (
       <div id="ruby_works">
         <h2>Ruby</h2>
@@ -17,3 +17,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+export default Ruby;
