@@ -28,12 +28,6 @@ body {
   margin: 0;
   text-align: center;
   border-bottom: 1px solid #D4D4D4;
-  -webkit-box-shadow: inset 0px 0px 4px 2px #ECECEC;
-  -moz-box-shadow: inset 0px 0px 4px 2px #ECECEC;
-  box-shadow: inset 0px 0px 4px 2px #ECECEC;
-}
-#menu ul li:hover, #menu ul li.active {
-  background-color: #FFF;
 }
 #menu ul li a {
   display: inline-block;
@@ -44,6 +38,12 @@ body {
   color: #727272;
   text-shadow: 1px 1px 2px #727272;
   letter-spacing: 1px;
+  -webkit-box-shadow: inset 0px 0px 4px 2px #ECECEC;
+  -moz-box-shadow: inset 0px 0px 4px 2px #ECECEC;
+  box-shadow: inset 0px 0px 4px 2px #ECECEC;
+}
+#menu ul li a:hover, #menu ul li a.active {
+  background-color: #FFF;
 }
 #menu .icp-link {
   position: absolute;

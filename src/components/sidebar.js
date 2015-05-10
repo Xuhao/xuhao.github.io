@@ -21,13 +21,12 @@ module.exports = React.createClass({
   },
 
   render: function () {
-    var currentPathname = this.context.router.getCurrentPathname().replace("/", "") || "about";
     return (
       <div id="menu" className="shadow">
         <ul>
           {this.props.linksMap.map(function(linkInfo, i) {
             return (
-              <li className={linkInfo[0] === currentPathname ? "active" : ""} key={i}>
+              <li key={i}>
                 <Link to={linkInfo[0]}>{linkInfo[1]}</Link>
               </li>
             );
