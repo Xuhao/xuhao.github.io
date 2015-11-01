@@ -1,5 +1,5 @@
 GEM
-  remote: http://ruby.taobao.org/
+  remote: https://ruby.taobao.org/
   specs:
     capistrano (3.4.0)
       i18n
@@ -24,3 +24,6 @@ PLATFORMS
 DEPENDENCIES
   capistrano (~> 3.4.0)
   capistrano-npm
+
+BUNDLED WITH
+   1.10.6
