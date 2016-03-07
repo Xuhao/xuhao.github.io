@@ -1,12 +1,12 @@
 {
   "name": "homepage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Xuhao's homepage",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p --progress --colors",
-    "server": "webpack-dev-server --progress --colors"
+    "build": "webpack -p --progress --colors --release",
+    "start": "webpack-dev-server --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -23,17 +23,22 @@
   },
   "homepage": "http://rubyfans.com",
   "dependencies": {
+    "babel-core": "^6.6.5",
     "fluxxor": "^1.5.3",
     "react": "^0.13.1",
     "react-router": "^0.13.2",
-    "superagent": "^1.1.0",
-    "babel-core": "^5.2.17",
-    "babel-loader": "^5.0.0",
-    "webpack": "^1.8.11"
+    "superagent": "^1.1.0"
   },
   "devDependencies": {
-    "babel-eslint": "^3.1.1",
+    "babel-eslint": "^3.1.30",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
     "eslint": "^0.21.0",
-    "webpack-dev-server": "^1.8.2"
+    "webpack-dev-server": "^1.8.2",
+    "webpack": "^1.12.14"
   }
 }
