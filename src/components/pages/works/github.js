@@ -1,22 +1,32 @@
-"use strict";
-import React from "react";
-import Fluxxor from "fluxxor";
-const FluxMixin = Fluxxor.FluxMixin(React);
-const StoreWatchMixin = Fluxxor.StoreWatchMixin;
+import React, { Component } from "react";
+import GithubStore from '../../../stores/GithubStore';
+import GithubActions from '../../../actions/GithubActions';
 
-const Github = React.createClass({
-  mixins: [FluxMixin, StoreWatchMixin("GithubStore")],
+class Github extends Component {
+  constructor() {
+    super();
 
-  getStateFromFlux() {
-    let store = this.getFlux().store("GithubStore");
-    return {
-      loading: store.loading,
-      error: store.error,
-      repos: store.repos
+    this.state = {
+      repos: []
     };
-  },
 
-  render () {
+    this.onChange = () => {
+      this.setState(GithubStore.getState());
+    };
+  }
+
+  componentDidMount() {
+    GithubStore.addChangeListener(this.onChange);
+    if (this.state.repos.length === 0) {
+      GithubActions.loadRepos("Xuhao");
+    }
+  }
+
+  componentWillUnmount() {
+    GithubStore.removeChangeListener(this.onChange);
+  }
+
+  render() {
     let repoList;
     if (this.state.loading) {
       repoList = (
@@ -44,13 +54,7 @@ const Github = React.createClass({
         </ul>
       </div>
     );
-  },
-
-  componentDidMount() {
-    if (this.state.repos.length === 0) {
-      this.getFlux().actions.github.loadRepos("Xuhao");
-    }
   }
-});
+}
 
 export default Github;
