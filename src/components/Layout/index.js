@@ -1,8 +1,8 @@
-import React from "react";
-import Sidebar from "./Sidebar";
-import { RouteHandler } from "react-router";
+import React, { Component } from 'react';
+import Sidebar from './Sidebar';
+import { RouteHandler } from 'react-router';
 
-const Layout = React.createClass({
+class Layout extends Component {
   render() {
     return (
       <div>
@@ -13,6 +13,6 @@ const Layout = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Layout;

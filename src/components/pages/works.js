@@ -1,13 +1,12 @@
-"use strict";
-import React from "react";
-import RubyWorks from "./works/ruby";
-import Github from "./works/github";
-import ReactWorks from "./works/react";
-import BrowserExt from "./works/browserExt";
-import PHP from "./works/php";
-import VB from "./works/vb";
+import React, { Component } from 'react';
+import RubyWorks from './works/ruby';
+import Github from './works/github';
+import ReactWorks from './works/react';
+import BrowserExt from './works/browserExt';
+import PHP from './works/php';
+import VB from './works/vb';
 
-const Works = React.createClass({
+class Works extends Component {
   render() {
     return (
       <div id="works">
@@ -27,6 +26,6 @@ const Works = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Works;

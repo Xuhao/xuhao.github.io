@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import GithubStore from '../../../stores/GithubStore';
 import GithubActions from '../../../actions/GithubActions';
 
@@ -18,7 +18,7 @@ class Github extends Component {
   componentDidMount() {
     GithubStore.addChangeListener(this.onChange);
     if (this.state.repos.length === 0) {
-      GithubActions.loadRepos("Xuhao");
+      GithubActions.loadRepos('Xuhao');
     }
   }
 

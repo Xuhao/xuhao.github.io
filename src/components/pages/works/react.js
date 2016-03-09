@@ -1,7 +1,6 @@
-"use strict";
-import React from "react";
+import React, { Component } from 'react';
 
-const ReactWorks = React.createClass({
+class ReactWorks extends Component {
   render() {
     return (
       <div id="react_works">
@@ -12,6 +11,6 @@ const ReactWorks = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default ReactWorks;

@@ -1,7 +1,6 @@
-"use strict";
-import React from "react";
+import React, { Component } from 'react';
 
-const Job = React.createClass({
+class Job extends Component {
   componentDidMount() {
     const scriptOne = document.createElement('script');
     const scriptTwo = document.createElement('script');
@@ -13,7 +12,7 @@ const Job = React.createClass({
     scriptTwo.dataset.format = 'inline';
     wrapper.appendChild(scriptOne);
     wrapper.appendChild(scriptTwo);
-  },
+  }
 
   render() {
     return (
@@ -23,6 +22,6 @@ const Job = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Job;

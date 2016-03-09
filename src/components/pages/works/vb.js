@@ -1,7 +1,6 @@
-"use strict";
-import React from "react";
+import React, { Component } from 'react';
 
-const VB = React.createClass({
+class VB extends Component {
   render() {
     return (
       <div id="vb_works">
@@ -12,6 +11,6 @@ const VB = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default VB;

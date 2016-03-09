@@ -1,7 +1,6 @@
-"use strict";
-import React from "react";
+import React, { Component } from 'react';
 
-const BrowserExt = React.createClass({
+class BrowserExt extends Component {
   render() {
     return (
       <div id="browser_ext_works">
@@ -16,6 +15,6 @@ const BrowserExt = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default BrowserExt;

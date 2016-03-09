@@ -1,7 +1,6 @@
-"use strict";
-import React from "react";
+import React, { Component } from 'react';
 
-const Contact = React.createClass({
+class Contact extends Component {
   render() {
     return (
       <div id="contact">
@@ -14,6 +13,6 @@ const Contact = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Contact;

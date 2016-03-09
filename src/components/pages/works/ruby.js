@@ -1,7 +1,6 @@
-"use strict";
-import React from "react";
+import React, { Component } from 'react';
 
-const Ruby = React.createClass({
+class Ruby extends Component {
   render() {
     return (
       <div id="ruby_works">
@@ -16,6 +15,6 @@ const Ruby = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default Ruby;

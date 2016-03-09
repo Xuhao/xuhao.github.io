@@ -1,19 +1,7 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { Component } from 'react';
+import { Link } from 'react-router';
 
-const Sidebar = React.createClass({
-  getDefaultProps() {
-    return {
-      linksMap: [
-        ["about", "关于"],
-        ["job", "工作"],
-        ["skill", "技能"],
-        ["works", "作品"],
-        ["contact", "联系"]
-      ]
-    };
-  },
-
+class Sidebar extends Component {
   render() {
     return (
       <div id="menu" className="shadow">
@@ -30,6 +18,16 @@ const Sidebar = React.createClass({
       </div>
     );
   }
-});
+}
+
+Sidebar.defaultProps = {
+  linksMap: [
+    ['about', '关于'],
+    ['job', '工作'],
+    ['skill', '技能'],
+    ['works', '作品'],
+    ['contact', '联系']
+  ]
+};
 
 export default Sidebar;
