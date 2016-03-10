@@ -1,7 +1,6 @@
-"use strict";
-import React from "react";
+import React, { Component } from 'react';
 
-const About = React.createClass({
+class About extends Component {
   render() {
     return (
       <div id="about">
@@ -14,6 +13,6 @@ const About = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default About;

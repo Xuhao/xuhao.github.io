@@ -1,35 +1,52 @@
-"use strict";
-import Fluxxor from "fluxxor";
-import constants from "./../constants/githubConstant";
+import EventEmitter from 'eventemitter3';
+import assign from 'lodash/assign';
+import Dispatcher from '../core/Dispatcher';
+import { ActionTypes } from '../constants/GithubConstants';
 
-const GithubStore = Fluxxor.createStore({
-  initialize() {
-    this.loading = false;
-    this.error = null;
-    this.repos = [];
+let repos = {};
+let errors = {};
+let loading = false;
 
-    this.bindActions(
-      constants.LOAD_REPO, this.onLoadRepo,
-      constants.LOAD_REPO_SUCCESS, this.onLoadRepoSuccess,
-      constants.LOAD_REPO_FAIL, this.onLoadRepoFail
-    );
+let GithubStore = assign({}, EventEmitter.prototype, {
+  getState() {
+    return {
+      loading: loading,
+      errors: errors,
+      repos: repos
+    };
   },
 
-  onLoadRepo() {
-    this.loading = true;
-    this.emit("change");
+  emitChange() {
+    return this.emit('change');
   },
 
-  onLoadRepoSuccess(payload) {
-    this.loading = false;
-    this.repos = payload;
-    this.emit("change");
+  addChangeListener(callback) {
+    this.on('change', callback);
   },
 
-  onLoadRepoFail(payload) {
-    this.loading = false;
-    this.error = payload;
-    this.emit("change");
+  removeChangeListener(callback) {
+    this.off('change', callback);
+  }
+});
+
+GithubStore.dispatchToken = Dispatcher.register((payload) => {
+  switch (payload.type) {
+    case ActionTypes.LOAD_REPO:
+      loading = true;
+      GithubStore.emitChange();
+      break;
+    case ActionTypes.LOAD_REPO_SUCCESS:
+      loading = false;
+      repos = payload.res.body;
+      GithubStore.emitChange();
+      break;
+    case ActionTypes.LOAD_REPO_FAIL:
+      loading = false;
+      errors = payload.err;
+      GithubStore.emitChange();
+      break;
+    default:
+      // Do nothing
   }
 });
 

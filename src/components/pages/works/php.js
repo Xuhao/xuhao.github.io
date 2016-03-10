@@ -1,7 +1,6 @@
-"use strict";
-import React from "react";
+import React, { Component } from 'react';
 
-const PHP = React.createClass({
+class PHP extends Component {
   render() {
     return (
       <div id="php_works">
@@ -12,6 +11,6 @@ const PHP = React.createClass({
       </div>
     );
   }
-});
+}
 
 export default PHP;

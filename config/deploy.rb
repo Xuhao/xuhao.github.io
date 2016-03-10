@@ -19,7 +19,7 @@ set :nginx_config_dir, '/home/xuhao/config/nginx'
 # set :format, :pretty
 
 # Default value for :log_level is :debug
-# set :log_level, :debug
+set :log_level, :debug
 
 # Default value for :pty is false
 set :pty, true
