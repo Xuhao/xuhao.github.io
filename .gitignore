@@ -1,4 +1,4 @@
 .versions.conf
 npm-debug.log
 node_modules/
-static
+bundle.js

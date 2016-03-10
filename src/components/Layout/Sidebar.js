@@ -9,7 +9,7 @@ class Sidebar extends Component {
           {this.props.linksMap.map((linkInfo, i) => {
             return (
               <li key={i}>
-                <Link to={linkInfo[0]}>{linkInfo[1]}</Link>
+                <Link to={`/${linkInfo[0]}`} activeClassName="active">{linkInfo[1]}</Link>
               </li>
             );
           })}

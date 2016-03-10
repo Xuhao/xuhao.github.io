@@ -6,9 +6,9 @@ class Layout extends Component {
   render() {
     return (
       <div>
-        <Sidebar />
+        <Sidebar location={this.props.location} />
         <div id="content">
-          <RouteHandler/>
+          {this.props.children}
         </div>
       </div>
     );

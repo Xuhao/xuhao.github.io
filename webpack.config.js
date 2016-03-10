@@ -7,7 +7,7 @@ var DEBUG = (process.argv.indexOf('-p') === -1);
 module.exports = {
   entry: "./main.js",
   output: {
-    path: __dirname + '/static',
+    path: __dirname,
     filename: DEBUG ? 'bundle.js' : 'bundle-[hash].js'
   },
   plugins: [
