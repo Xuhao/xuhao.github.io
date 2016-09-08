@@ -1,5 +1,5 @@
 import Dispatcher from '../core/Dispatcher';
-import { ActionTypes } from '../constants/GithubConstants';
+import ActionTypes from '../constants/GithubConstants';
 import request from "superagent";
 
 export default {
