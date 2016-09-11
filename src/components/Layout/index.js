@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Sidebar from './Sidebar';
 
-class Layout extends Component {
-  render() {
-    return (
-      <div>
-        <Sidebar location={this.props.location} />
-        <div id="content">
-          {this.props.children}
-        </div>
+export default props => {
+  return (
+    <div>
+      <Sidebar location={props.location} />
+      <div id="content">
+        {props.children}
       </div>
-    );
-  }
-}
-
-export default Layout;
+    </div>
+  );
+};

@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import i18n from '../../core/i18n';
 
-class Skill extends Component {
-  render() {
-    return (
-      <div id="skill">
-        <h1>{i18n.t('translation:::skill::my skills')}</h1>
-        <ul id="skills">
-          {this.props.skills.map((skill) => {
-            return (
-              <li key={skill.name}>
-                <span className="name">{skill.name}</span>
-                <span className={`skills-icon level-${skill.level}`}></span>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }
+const Skill = props => {
+  return (
+    <div id="skill">
+      <h1>{i18n.t('translation:::skill::my skills')}</h1>
+      <ul id="skills">
+        {props.skills.map((skill) => {
+          return (
+            <li key={skill.name}>
+              <span className="name">{skill.name}</span>
+              <span className={`skills-icon level-${skill.level}`}></span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 Skill.defaultProps = {

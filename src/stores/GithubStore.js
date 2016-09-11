@@ -3,7 +3,7 @@ import assign from 'lodash/assign';
 import Dispatcher from '../core/Dispatcher';
 import ActionTypes from '../constants/GithubConstants';
 
-let repos = {};
+let repos = [];
 let errors = {};
 let loading = false;
 

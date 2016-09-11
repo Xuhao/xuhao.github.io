@@ -8,9 +8,7 @@ class Github extends Component {
   constructor() {
     super();
 
-    this.state = {
-      repos: []
-    };
+    this.state = GithubStore.getState();
 
     this.onChange = () => {
       this.setState(GithubStore.getState());
