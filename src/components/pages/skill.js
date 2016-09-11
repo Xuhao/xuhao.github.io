@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import i18n from '../../core/i18n';
 
 class Skill extends Component {
   render() {
     return (
       <div id="skill">
-        <h1>我的技能</h1>
+        <h1>{i18n.t('translation:::skill::my skills')}</h1>
         <ul id="skills">
-          {this.props.skills.map((skill, i) => {
+          {this.props.skills.map((skill) => {
             return (
-              <li key={i}>
+              <li key={skill.name}>
                 <span className="name">{skill.name}</span>
                 <span className={`skills-icon level-${skill.level}`}></span>
               </li>

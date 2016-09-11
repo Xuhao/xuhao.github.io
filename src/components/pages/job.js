@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import i18n from '../../core/i18n';
 
 class Job extends Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class Job extends Component {
   render() {
     return (
       <div id="job">
-        <h1>我的工作</h1>
+        <h1>{i18n.t('translation:::job::my job')}</h1>
         <div name="linkedin_profile"></div>
         <div>Linkedin: <a href="https://www.linkedin.com/in/hao-xu-98494879" target="_blank">https://www.linkedin.com/in/hao-xu-98494879</a></div>
       </div>
