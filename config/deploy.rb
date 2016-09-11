@@ -76,6 +76,8 @@ namespace :npm do
       within fetch(:npm_target_path, release_path) do
         with fetch(:npm_env_variables, {}) do
           execute :npm, 'run', 'build'
+          execute :mv, 'b-check', 'build/'
+          execute :mv, 'kuaihou', 'build/'
         end
       end
     end

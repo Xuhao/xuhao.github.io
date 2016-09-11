@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
+import i18n from '../../core/i18n';
 
 class Sidebar extends Component {
   render() {
     return (
       <div id="menu" className="shadow">
         <ul>
-          {this.props.linksMap.map((linkInfo, i) => {
+          <li key="about">
+            <IndexLink to="/" activeClassName="active">{i18n.t('translation:::sidebar::about')}</IndexLink>
+          </li>
+          {this.props.linksMap.map((linkInfo) => {
             return (
-              <li key={i}>
-                <Link to={`/${linkInfo[0]}`} activeClassName="active">{linkInfo[1]}</Link>
+              <li key={linkInfo.path}>
+                <Link to={linkInfo.path} activeClassName="active">{i18n.t(linkInfo.text)}</Link>
               </li>
             );
           })}
@@ -22,11 +26,10 @@ class Sidebar extends Component {
 
 Sidebar.defaultProps = {
   linksMap: [
-    ['about', '关于'],
-    ['job', '工作'],
-    ['skill', '技能'],
-    ['works', '作品'],
-    ['contact', '联系']
+    {text: 'translation:::sidebar::job', path: '/job'},
+    {text: 'translation:::sidebar::skill', path: '/skill'},
+    {text: 'translation:::sidebar::works', path: '/works'},
+    {text: 'translation:::sidebar::contact', path: '/contact'}
   ]
 };
 

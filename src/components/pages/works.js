@@ -5,12 +5,13 @@ import ReactWorks from './works/react';
 import BrowserExt from './works/browserExt';
 import PHP from './works/php';
 import VB from './works/vb';
+import i18n from '../../core/i18n';
 
 class Works extends Component {
   render() {
     return (
       <div id="works">
-        <h1>我的作品</h1>
+        <h1>{i18n.t('translation:::works::my works')}</h1>
         <hr />
         <RubyWorks />
         <hr />

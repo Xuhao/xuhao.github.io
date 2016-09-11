@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import GithubStore from '../../../stores/GithubStore';
 import GithubActions from '../../../actions/GithubActions';
+import ajaxLoader from '../../../assets/images/ajax_loader.gif';
+import i18n from '../../../core/i18n';
 
 class Github extends Component {
   constructor() {
@@ -31,7 +33,7 @@ class Github extends Component {
     if (this.state.loading) {
       repoList = (
         <li className="loader">
-          <img src="assets/images/ajax_loader.gif" />Loading...
+          <img src={ajaxLoader} alt="Loading..." />Loading...
         </li>
       );
     } else if (this.state.error) {
@@ -48,7 +50,7 @@ class Github extends Component {
     }
     return (
       <div id="github_works">
-        <h4>Github上的项目</h4>
+        <h4>{i18n.t('translation:::works::github::github projects')}</h4>
         <ul id="github">
           {repoList}
         </ul>

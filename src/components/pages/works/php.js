@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import i18n from '../../../core/i18n';
 
 class PHP extends Component {
   render() {
     return (
       <div id="php_works">
         <h2>PHP</h2>
-        B-Check：PHP探针
-        <br />地址：
+        {i18n.t('translation:::works::php::b-check')}
+        <br />{i18n.t('translation:::works::php::link')}:&nbsp;
         <a href="b-check/" target="_blank">http://rubyfans.com/b-check</a>
       </div>
     );

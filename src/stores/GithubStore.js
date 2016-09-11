@@ -1,7 +1,7 @@
 import EventEmitter from 'eventemitter3';
 import assign from 'lodash/assign';
 import Dispatcher from '../core/Dispatcher';
-import { ActionTypes } from '../constants/GithubConstants';
+import ActionTypes from '../constants/GithubConstants';
 
 let repos = {};
 let errors = {};
