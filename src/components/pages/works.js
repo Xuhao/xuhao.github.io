@@ -9,7 +9,7 @@ import i18n from '../../core/i18n';
 
 export default () => {
   return (
-    <div id="works">
+    <div id="works" className="content-body">
       <h1>{i18n.t('translation:::works::my works')}</h1>
       <hr />
       <RubyWorks />

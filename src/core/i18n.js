@@ -11,7 +11,7 @@ i18n
     defaultNS: 'translation',
     keySeparator: '::',
     nsSeparator: ':::',
-    debug: true,
+    debug: false,
     interpolation: {
       escapeValue: false
     },

@@ -17,7 +17,7 @@ class Job extends Component {
 
   render() {
     return (
-      <div id="job">
+      <div id="job" className="content-body">
         <h1>{i18n.t('translation:::job::my job')}</h1>
         <div name="linkedin_profile"></div>
         <div>Linkedin: <a href="https://www.linkedin.com/in/hao-xu-98494879" target="_blank">https://www.linkedin.com/in/hao-xu-98494879</a></div>

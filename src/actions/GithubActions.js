@@ -4,7 +4,6 @@ import request from "superagent";
 
 export default {
   loadRepos(username) {
-
     Dispatcher.dispatch({
       type: ActionTypes.LOAD_REPO
     });

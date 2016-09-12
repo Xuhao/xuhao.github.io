@@ -3,7 +3,7 @@ import i18n from '../../core/i18n';
 
 const Skill = props => {
   return (
-    <div id="skill">
+    <div id="skill" className="content-body">
       <h1>{i18n.t('translation:::skill::my skills')}</h1>
       <ul id="skills">
         {props.skills.map((skill) => {
