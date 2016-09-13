@@ -9,8 +9,10 @@ class Layout extends Component {
     super();
 
     this.handleLngSwitch = lng => {
-      i18n.changeLanguage(lng);
-      browserHistory.push(window.location.pathname);
+      if (i18n.language !== lng) {
+        i18n.changeLanguage(lng);
+        browserHistory.push(window.location.pathname);
+      }
     };
   }
 
