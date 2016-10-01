@@ -40,8 +40,9 @@ class Github extends Component {
       repoList = this.state.repos.map((repo, i) => {
         return (
           <li key={i}>
-            <a href={repo.html_url} target="_blank">{repo.name}</a>
-            ({repo.description}, Base on {repo.language})
+            <a href={repo.html_url} target="_blank">
+              <img src={`https://img.shields.io/github/stars/xuhao/${repo.name}.svg?style=social&label=${repo.name}`} alt={`${repo.name}: ${repo.stargazers_count} starts`} title={`${repo.name}: ${repo.stargazers_count} stars`} />
+              </a>
           </li>
         );
       });

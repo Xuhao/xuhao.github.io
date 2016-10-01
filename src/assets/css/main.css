@@ -107,7 +107,9 @@ img.my-photo {
   color: #626262
 }
 #github {
-  margin: 0;
+  margin: 5px 0 0 25px;
+  list-style-type: circle;
+  padding: 0px;
 }
 #github li.loader {
   color: #8A0E12;

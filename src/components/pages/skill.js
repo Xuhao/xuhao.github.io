@@ -21,15 +21,16 @@ const Skill = props => {
 
 Skill.defaultProps = {
   skills: [
-    {name: "Ruby", level: 5},
-    {name: "Javascript", level: 4},
-    {name: "CSS", level: 4},
-    {name: "HTML", level: 5},
-    {name: "Mysql", level: 3},
-    {name: "Postgresql", level: 3},
-    {name: "Mongodb", level: 3},
-    {name: "React", level: 4},
-    {name: "React-Native", level: 2}
+    {name: 'Ruby', level: 5},
+    {name: 'Javascript', level: 4},
+    {name: 'CSS', level: 4},
+    {name: 'HTML', level: 5},
+    {name: 'Mysql', level: 3},
+    {name: 'Postgresql', level: 3},
+    {name: 'Mongodb', level: 3},
+    {name: 'React', level: 5},
+    {name: 'React-Native', level: 2},
+    {name: 'GraphQL', level: 3}
   ]
 };
 
