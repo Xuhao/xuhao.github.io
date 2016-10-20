@@ -11,6 +11,7 @@ set :repo_url, 'git://github.com/Xuhao/xuhao.github.com.git'
 set :deploy_to, "/home/xuhao/apps/#{fetch(:application)}"
 
 set :nginx_config_dir, '/home/xuhao/config/nginx'
+set :npm_flags, '--silent --no-progress'
 
 # Default value for :scm is :git
 # set :scm, :git
