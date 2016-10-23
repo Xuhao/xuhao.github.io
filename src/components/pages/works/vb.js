@@ -8,7 +8,7 @@ class VB extends Component {
         <h2>Visual Basic 6.0</h2>
         {i18n.t('translation:::works::vb::kuaihou')}
         <br />{i18n.t('translation:::works::vb::link')}:&nbsp;
-        <a href="misc/kuaihou/" target="_blank">http://rubyfans.com/kuaihou</a>
+        <a href="misc/kuaihou/" target="_blank">http://rubyfans.com/misc/kuaihou</a>
       </div>
     );
   }

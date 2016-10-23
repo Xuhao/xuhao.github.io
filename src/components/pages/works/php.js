@@ -8,7 +8,7 @@ class PHP extends Component {
         <h2>PHP</h2>
         {i18n.t('translation:::works::php::b-check')}
         <br />{i18n.t('translation:::works::php::link')}:&nbsp;
-        <a href="misc/b-check/" target="_blank">http://rubyfans.com/b-check</a>
+        <a href="misc/b-check/" target="_blank">http://rubyfans.com/misc/b-check</a>
       </div>
     );
   }
