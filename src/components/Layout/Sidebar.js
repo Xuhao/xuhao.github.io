@@ -17,7 +17,11 @@ const Sidebar = props => {
           );
         })}
       </ul>
-      <div className="icp-link"><a href="http://www.miitbeian.gov.cn">豫ICP备11005941号-4</a></div>
+      <div className="icp-link">
+        <a target="_blank" href="http://www.miitbeian.gov.cn">豫ICP备11005941号-4</a>
+        <br />
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41152402000161">豫公网安备41152402000161号</a>
+      </div>
     </div>
   );
 };

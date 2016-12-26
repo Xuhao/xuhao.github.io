@@ -65,12 +65,13 @@ body {
   background-color: #FFF;
 }
 #menu .icp-link {
+  line-height: 16px;
   position: absolute;
   bottom: 10px;
-  left: 50px;
+  left: 10%;
 }
 #menu .icp-link a, #menu .icp-link a:focus, #menu .icp-link a:visited, #menu .icp-link a:active {
-  font-size: 12px;
+  font-size: 10px;
   text-decoration: none;
   color: #aaa;
 }
