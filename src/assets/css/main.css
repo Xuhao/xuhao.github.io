@@ -68,7 +68,8 @@ body {
   line-height: 16px;
   position: absolute;
   bottom: 10px;
-  left: 10%;
+  text-align: center;
+  width: 100%;
 }
 #menu .icp-link a, #menu .icp-link a:focus, #menu .icp-link a:visited, #menu .icp-link a:active {
   font-size: 10px;

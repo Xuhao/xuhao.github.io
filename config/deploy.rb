@@ -1,13 +1,6 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-server 'rubyfans.com', user: 'xuhao', roles: %w{app db web}
-
-set :ssh_options, {
-  keys: %w(/Users/xuhao/.ssh/id_rsa),
-  forward_agent: true
-}
-
 set :application, 'homepage'
 set :repo_url, 'git://github.com/Xuhao/xuhao.github.com.git'
 
@@ -69,11 +62,11 @@ namespace :deploy do
       execute :mkdir, '-pv', fetch(:nginx_config_dir)
 
       target = "#{fetch(:nginx_config_dir)}/#{fetch(:application)}.conf"
-      source = "#{current_path}/deploy/nginx.conf"
+      source = "#{current_path}/config/nginx.conf"
       if test "[ -f #{target} ]"
         execute :rm, target
       end
-      execute :ln, '-s', source, target
+      execute :ln, '-sf', source, target
     end
   end
 end
@@ -84,8 +77,8 @@ namespace :npm do
       within fetch(:npm_target_path, release_path) do
         with fetch(:npm_env_variables, {}) do
           execute :npm, 'run', 'build'
-          execute :mv, 'b-check', 'build/'
-          execute :mv, 'kuaihou', 'build/'
+          execute :mv, 'misc/b-check', 'build/'
+          execute :mv, 'misc/kuaihou', 'build/'
         end
       end
     end
