@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mv build/* ./ && rm -rf build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
