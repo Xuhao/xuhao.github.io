@@ -6,9 +6,9 @@ class Ruby extends Component {
     return (
       <div id="ruby_works">
         <h2>Ruby</h2>
-        {i18n.t('translation:::works::ruby::yihub')}
+        {i18n.t('translation:::works::ruby::blx')}
         <br />{i18n.t('translation:::works::ruby::link')}:&nbsp;
-        <a href="http://www.yihub.com" target="_blank">www.yihub.com</a>
+        <a href="http://blx.rubyfans.com" target="_blank">blx.rubyfans.com</a>
         <br />
         <br />{i18n.t('translation:::works::ruby::ruby doc')}
         <br />{i18n.t('translation:::works::ruby::link')}:&nbsp;
