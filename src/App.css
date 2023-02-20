@@ -9,10 +9,10 @@
   color: white;
 }
 
-.App-header {
+.header {
   font-size: calc(10px + 2vmin);
 }
-.App-header .logo {
+.header .logo {
   width: 128px;
 }
 
@@ -21,4 +21,14 @@
 }
 .github-link a {
   color: #61dafb;
+}
+
+.icp-links {
+  position: absolute;
+  bottom: 10px;
+}
+
+.icp-links a {
+  font-size: 12px;
+  color: #4d4b4b;
 }
